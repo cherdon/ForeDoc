@@ -1,4 +1,4 @@
-toc = {
+var toc = {
   "title": " Fore Documentation (1.0.1)",
   "link": "ForeDocumentation",
   "children": [
@@ -88,37 +88,42 @@ toc = {
       "children": [
         {
           "title": " Pre-requisites",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingPreReq",
           "children": null
         },
         {
           "title": " Download OSM Data",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingOSM",
+          "children": null
+        },
+        {
+          "title": " Cross Reference",
+          "link": "D_ProceduralBuildingCrossRef",
           "children": null
         },
         {
           "title": " Internalise Data",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingInternalise",
           "children": null
         },
         {
           "title": " Customise Building Height",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingHeight",
           "children": null
         },
         {
           "title": " Customise Building Texture",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingTexture",
           "children": null
         },
         {
           "title": " Customise Texture Mapping",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingTextureMap",
           "children": null
         },
         {
           "title": " Importing to Unity",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_ProceduralBuildingImport",
           "children": null
         }
       ]
