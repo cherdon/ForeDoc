@@ -4,54 +4,27 @@
   "children": [
     {
         "title": " System Requirements",
-        "link": "SystemRequirements",
+        "link": "D_SystemRequirements",
         "children": null
     },
     {
       "title": " Setting up the project",
-      "link": "SettingUp",
+      "link": "D_SettingUp",
       "children": [
         {
-          "title": " Installing required assets",
-          "link": "SettingUpVehicleSimul",
-          "children": [
-            {
-              "title": " Project Repository",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Unity Asset Store",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Other custom deletions",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            }
-          ]
+          "title": " Project Repository",
+          "link": "D_ProjectRepo",
+          "children": null
         },
         {
-          "title": " Required Software",
-          "link": "SettingUpVehicleSimul",
-          "children": [
-            {
-              "title": " Rhinoceros 6",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Photoshop",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Open Street Map",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            }
-          ]
+          "title": " Unity Asset Store",
+          "link": "D_AssetStore",
+          "children": null
+        },
+        {
+          "title": " Other Software",
+          "link": "D_OtherSoftware",
+          "children": null
         }
       ]
     },
@@ -118,11 +91,6 @@
       ]
     },
     {
-      "title": " Road Generation",
-      "link": "SettingUpVehicleSimul",
-      "children": null
-    },
-    {
       "title": " Building Standard Assets",
       "link": "D_AssetLibraryIntro",
       "children": [
@@ -132,8 +100,8 @@
           "children": null
         },
         {
-          "title": " Covered Walkway",
-          "link": "D_AssetLibraryCoveredWalkway",
+          "title": " Bridge",
+          "link": "D_AssetLibraryBridge",
           "children": null
         },
         {
@@ -206,7 +174,7 @@
     },
     {
       "title": " Pedestrian Simulation",
-      "link": "SettingUpVehicleSimul",
+      "link": "D_PedestrianSimulationIntro",
       "children": [
         {
           "title": " Pre-requisites",
@@ -244,11 +212,6 @@
           "children": null
         }
       ]
-    },
-    {
-      "title": " Glossary",
-      "link": "SettingUpVehicleSimul",
-      "children": null
     }
   ]
 }
