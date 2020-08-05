@@ -57,28 +57,17 @@
     },
     {
       "title": " Preparing the environment",
-      "link": "SettingUpVehicleSimul",
+      "link": "D_PreparingEnvironmentIntro",
       "children": [
         {
           "title": " Importing of models",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_PreparingEnvironmentImporting",
           "children": null
         },
         {
-          "title": " Basic Configurations",
-          "link": "SettingUpVehicleSimul",
-          "children": [
-            {
-              "title": " Probuilderize",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Setting Global Parameters",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            }
-          ]
+          "title": " Probuilderize",
+          "link": "D_PreparingEnvironmentProbuilderizing",
+          "children": null
         }
       ]
     },
@@ -140,7 +129,48 @@
     },
     {
       "title": " Vehicle Simulation",
-      "link": "D_PedestrianSimulationIntro",
+      "link": "D_VehicleSimulationIntro",
+      "children": [
+        {
+          "title": " Pre-requisites",
+          "link": "D_VehicleSimulationPreReq",
+          "children": null
+        },
+        {
+          "title": " Spawn Point",
+          "link": "D_VehicleSimulationSpawn",
+          "children": null
+        },
+        {
+          "title": " State Machine Animator",
+          "link": "D_VehicleSimulationAnimator",
+          "children": null
+        },
+        {
+          "title": " Straight Lines",
+          "link": "D_VehicleSimulationStraight",
+          "children": null
+        },
+        {
+          "title": " Turning Around Bends",
+          "link": "D_VehicleSimulationBends",
+          "children": null
+        },
+        {
+          "title": " Carpark Simulation",
+          "link": "D_VehicleSimulationCarpark",
+          "children": null
+        },
+        {
+          "title": " Despawn Point",
+          "link": "D_VehicleSimulationDespawn",
+          "children": null
+        }
+      ]
+    },
+    {
+      "title": " Pedestrian Simulation",
+      "link": "SettingUpVehicleSimul",
       "children": [
         {
           "title": " Pre-requisites",
@@ -178,11 +208,6 @@
           "children": null
         }
       ]
-    },
-    {
-      "title": " Pedestrian Simulation",
-      "link": "SettingUpVehicleSimul",
-      "children": null
     },
     {
       "title": " Glossary",

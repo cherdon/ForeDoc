@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <script>
+        var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorial | Fore </title>
+    <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+    <meta name="author" content="Cher Don">
+    <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="../static/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="../static/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="../static/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="../static/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="../static/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../static/images/favicons/apple-icon.png">
+    <meta name="msapplication-TileColor" content="#222c37">
+    <meta name="msapplication-TileImage" content="../static/images/favicons/ms-icon-144x144.png">
+    <script type="text/javascript" src="https://docs.unity3d.com/StaticFilesConfig/UnityVersionsInfo.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../static/js/core.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../docdata/toc.js?ts=1591328552"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/core.css?ts=1591328552">
+    <link rel="stylesheet" href="../static/css/prism.css">
+    <script src="../static/js/prism.js"></script>
+    <script src="../static/js/jquery.sidebar.min.js"></script>
+    <link rel="stylesheet" href="../static/css/mobileoptimisation.css">
+    <script src="../static/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div class="header-wrapper">
+    <div id="header" class="header">
+        <div class="content">
+            <div class="spacer">
+                <div class="menu">
+                    <div id="nav-open" for="nav-input"><span></span></div>
+                    <div class="logo"><a href="Documentation.html"></a></div>
+                    <div class="search-form">
+                        <form action="30_search.html" method="get" class="apisearch">
+                            <input type="text" name="q" placeholder="Search documentation..." autosave="Unity Reference"
+                                   results="5" class="sbox field" id="q"><input type="submit" class="submit">
+                        </form>
+                    </div>
+                    <ul>
+                        <li><a href="Documentation.html" class="selected">Documentation</a></li>
+                        <li><a href="Modules.html">Modules</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="more">
+                <div class="filler"></div>
+                <ul>
+                    <li><a href="../index.html">Go to website</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+
+    <!-- Start Content -->
+    <video id="video" controls="controls">
+        <source id="mp4source" src="" type="video/mp4" controls/>
+        <!-- <source id="oggSource" src="" type="video/ogg" /> -->
+    </video>    
+    <!-- End Content -->
+    <script>
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
+                }
+                //returning false will help knowing if that variable exists
+                return false;
+            }
+        
+            function loadVideo() {
+                var videoFile = getQueryVariable("video");
+        
+                //if v is not set
+                if (!videoFile) {
+                    alert('please choose a video file, \n maybe you came here by accident?');
+                    //no need to go further
+                    return;
+                }
+        
+                //Select the sources for the mp4 and the ogg version
+                var mp4source = document.getElementById("mp4source");
+                mp4source.setAttribute("src", "../static/videos/" + videoFile + ".mp4");
+                console.log(mp4source);
+                // var oggSource = document.getElementById("oggSource");
+                // oggSource.setAttribute("src", videoFile + ".ogv");
+        
+                //if t is set   
+                if (getQueryVariable("t")) {
+                    //userAgent can be overridden but it may be the best way to detect ios devices
+                    var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/) !== null;
+                    if (iOS) {
+                        iOSLoadSeek();
+                    } else {
+                        //wait for the video meta data to be loaded
+                        document.getElementById('video').addEventListener('loadedmetadata', function() {
+                            //then change the time position
+                            this.currentTime = getQueryVariable("t");
+                        })
+                    }
+                }
+            }
+        
+            //ios load seek workaround, edited from https://gist.github.com/millermedeiros/891886
+            function iOSLoadSeek() {
+                var vid = document.getElementById('video');
+                if (vid.readyState !== 4) { //HAVE_ENOUGH_DATA
+                    vid.addEventListener('canplaythrough', iosCanPlay, false);
+                    vid.addEventListener('load', iosCanPlay, false); //add load event as well to avoid errors, sometimes 'canplaythrough' won't dispatch.
+                    vid.addEventListener('play', iosCanPlay, false); //Actually play event seems to be faster
+                    vid.play();
+                    setTimeout(function() {
+                        vid.pause(); //block play so it buffers before playing
+                    }, 10); //it needs to be after a delay otherwise it doesn't work properly.
+                }
+            }
+            //called when one of the three events fires
+            function iosCanPlay() {
+                //remove all the event listeners
+                this.removeEventListener('canplaythrough', iosCanPlay, false);
+                this.removeEventListener('load', iosCanPlay, false);
+                this.removeEventListener('play', iosCanPlay, false);
+                //finally seek the desired position
+                this.currentTime = getQueryVariable("t");
+                this.play();
+            }
+        
+            //When the page is loaded, execute
+            window.onload = loadVideo();
+        </script>
+
+</div>
+<div class="footer-wrapper">
+    <div class="footer clear">
+        <div class="copy"></div>
+        <div class="menu">
+            <a href="Tutorials.html">Tutorials</a>
+            <a href="https://answers.unity3d.com">FAQ</a>
+            <a href="https://support.unity3d.com/hc/en-us">Download Links</a>
+        </div>
+    </div>
+</div>
+<script src="../static/js/special.js"></script>
+</body>
+</html>
