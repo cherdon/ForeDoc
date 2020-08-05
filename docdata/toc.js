@@ -123,9 +123,45 @@ var toc = {
       "children": null
     },
     {
-      "title": " Standard Asset Library",
-      "link": "SettingUpVehicleSimul",
-      "children": null
+      "title": " Building Standard Assets",
+      "link": "D_AssetLibraryIntro",
+      "children": [
+        {
+          "title": " Bus Stop",
+          "link": "D_AssetLibraryBusStop",
+          "children": null
+        },
+        {
+          "title": " Covered Walkway",
+          "link": "D_AssetLibraryCoveredWalkway",
+          "children": null
+        },
+        {
+          "title": " Bench",
+          "link": "D_AssetLibraryBench",
+          "children": null
+        },
+        {
+          "title": " Bollard",
+          "link": "D_AssetLibraryBollard",
+          "children": null
+        },
+        {
+          "title": " Post Box",
+          "link": "D_AssetLibraryPostBox",
+          "children": null
+        },
+        {
+          "title": " Street Sign",
+          "link": "D_AssetLibraryStreetSign",
+          "children": null
+        },
+        {
+          "title": " Street Lighting",
+          "link": "D_AssetLibraryStreetLighting",
+          "children": null
+        }
+      ]
     },
     {
       "title": " Vehicle Simulation",

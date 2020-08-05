@@ -101,7 +101,9 @@
         
                 //Select the sources for the mp4 and the ogg version
                 var mp4source = document.getElementById("mp4source");
-                mp4source.setAttribute("src", "../static/videos/" + videoFile + ".mp4");
+                // TODO Local vs Cloud
+                // mp4source.setAttribute("src", "../static/videos/" + videoFile + ".mp4");
+                mp4source.setAttribute("src", "https://cherdon.github.io/ForeDoc/static/videos/" + videoFile + ".mp4");
                 console.log(mp4source);
                 // var oggSource = document.getElementById("oggSource");
                 // oggSource.setAttribute("src", videoFile + ".ogv");
