@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <script>
+        var offline = (location.href.indexOf('docs.unity3d.com') == -1) ? true : false; if (!offline) { (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5V25JL6'); }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Stop Generation | Fore</title>
+    <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+    <meta name="author" content="Cher Don">
+    <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../static/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../static/images/favicons/apple-icon.png">
+    <meta name="msapplication-TileColor" content="#222c37">
+    <meta name="msapplication-TileImage" content="../static/images/favicons/ms-icon-144x144.png">
+    <script type="text/javascript" src="https://docs.unity3d.com/StaticFilesConfig/UnityVersionsInfo.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../static/js/core.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../docdata/toc.js?ts=1591328552"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/core.css?ts=1591328552">
+    <link rel="stylesheet" href="../static/css/prism.css">
+    <script src="../static/js/prism.js"></script>
+    <script src="../static/js/jquery.sidebar.min.js"></script>
+    <link rel="stylesheet" href="../static/css/mobileoptimisation.css">
+    <script src="../static/js/mobileoptimisation.js"></script>
+</head>
+
+<body>
+    <div class="header-wrapper">
+        <div id="header" class="header">
+            <div class="content">
+                <div class="spacer">
+                    <div class="menu">
+                        <div id="nav-open" for="nav-input"><span></span></div>
+                        <div class="logo"><a href="Documentation.html"></a></div>
+                        <div class="search-form">
+                            <form action="30_search.html" method="get" class="apisearch">
+                                <input type="text" name="q" placeholder="Search documentation..."
+                                    autosave="Unity Reference" results="5" class="sbox field" id="q"><input
+                                    type="submit" class="submit">
+                            </form>
+                        </div>
+                        <ul>
+                            <li><a href="Documentation.html" class="selected">Documentation</a></li>
+                            <li><a href="Modules.html">Modules</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="more">
+                    <div class="filler"></div>
+                    <ul>
+                        <li><a href="../index.html">Go to website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="content">
+                <div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                    Version: <b>1.0.1</b>
+                    <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+                        <ul id="OtherVersionsContentUl"></ul>
+                        <div id="otherVersionsLegend">
+                            <ul>
+                                <li>
+                                    <div id="supportedColour" class="legendBox"></div>
+                                    Supported
+                                </li>
+                                <li>
+                                    <div id="notFoundColour" class="legendBox"></div>
+                                    Legacy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+                </div>
+                <div class="lang-switcher">
+                    <div class="current toggle" data-target=".lang-list">
+                        <div class="lbl">Language
+                            : <span class="b">English</span>
+                        </div>
+                        <div class="arrow"></div>
+                        <div class="lang-list" style="display:none;">
+                            <ul>
+                                <li><a href="Documentation.html">English</a></li>
+                                <li><a href="Documentation.html">中文</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobileLogo"><a href="Documentation.html"></a></div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-wrap">
+                <div class="content">
+                    <div class="sidebar-menu">
+                        <div class="toc" id="customScrollbar">
+                            <h2>Fore Documentation</h2>
+                            <div class="search-form sidebar-search-form">
+                                <form action="30_search.html" method="get" class="apisearch">
+                                    <input type="text" name="q" placeholder="Search documentation..."
+                                        autosave="Unity Reference" results="5" class="sbox field" id="q"><input
+                                        type="submit" id="mobileSearchBtn" class="submit" value="Search">
+                                </form>
+                            </div>
+                            <div class="toggle version-number sidebar-version-switcher" id="VersionNumber"
+                                data-target=".otherversionscontent">
+                                <form id="otherVersionsContentMobileForm">
+                                    <div class="ui-field-contain">
+                                        <label for="select-native-4">Version: 1.0.1</label><select
+                                            name="select-native-4" id="versionsSelectMobile">
+                                            <option>Select a different version</option>
+                                            <optgroup id="versionsWithThisPageMobile" label="Versions with this page">
+                                            </optgroup>
+                                            <optgroup id="versionsWithoutThisPageMobile"
+                                                label="Versions without this page"></optgroup>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="lang-switcher">
+                                <div class="current toggle" data-target=".lang-list">
+                                    <div class="lbl">Language
+                                        : <span class="b">English</span>
+                                    </div>
+                                    <div class="arrow"></div>
+                                    <div class="lang-list" style="display:none;">
+                                        <ul>
+                                            <li><a href="Documentation.html">English</a></li>
+                                            <li><a href="Documentation.html">中文</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Content -->
+        <div id="content-wrap" class="content-wrap">
+            <div class="content-block">
+                <div class="content">
+                    <div class="section">
+                        <div class="breadcrumbs clear">
+                            <ul>
+                                <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
+                                <li><a href="D_AssetLibraryIntro.html"> Building Standard Assets</a></li>
+                                <li> Bus Stop Generation</li>
+                            </ul>
+                        </div>
+                        <div class="mb20">
+                            <div class="nextprev clear">
+                                <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                    <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                    <div class="tip"> Unity Hub</div>
+                                </div>
+                                <div class="icon tt right" data-distance="-40|-30|top">
+                                    <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                    <div class="tip"> Adding modules to the Unity Editor</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="_leavefeedback"></div>
+                        <h1>Generation of Bus Stop Asset</h1>
+                        <!--BeginSwitchLink-->
+                        <!--EndSwitchLink-->
+                        <div class="clear"></div>
+                        <p>
+                            <img src="../static/images/singru/busstop/busstop1.png">
+                        </p>
+                        <br>
+                        <ol>
+                            <li>
+                                <p>Getting the dimensions of a bus stop.</p>
+                                <br>
+                                <table>
+                                    <tr>
+                                        <th>Specific Type</th>
+                                        <th>General Specifications(m):</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Generic Bus Stop </td>
+                                        <td>
+                                            Shelter:
+                                            <ul>
+                                                <li>Height: min 2.2m</li>
+                                                <li>Width: 3m</li>
+                                                <li>Length: increments of 3m starting from 6m up to 36m depending on
+                                                    number of commuters</li>
+                                                <li>Thickness: 0.2m</li>
+                                            </ul>
+                                            Supporting Beams:
+                                            <ul>
+                                                <li>Height: 2.2m</li>
+                                                <li>Radius: 0.1x2.2</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Color</td>
+                                        <td>
+                                            <ul>
+                                                <li>White</li>
+                                                <li>Grey</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bus Stop that is Flushed with Kerb</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: min 2m</li>
+                                                <li>Width: 3m</li>
+                                                <li>Length: increments of 3m starting from 6m up to 36m depending on
+                                                    number of commuters</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bus Stop with Shelter Protruding to Road</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: 4.8m</li>
+                                                <li>Width: 4.5m</li>
+                                                <li>Length: increments of 3m starting from 6m up to 36m depending on
+                                                    number of commuters</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                                Information gotten from <a
+                                    href="https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/architectural_standards/pdf/ADC%20Section%204_Commuter%20Facilities%20Design%20Requirements%20and%20Checklist%20Forms.pdf">LTA</a>
+                            </li>
+                            <br>
+                            <li>
+                                <p> Open modelling software.
+                                    Ensure that the correct dimension (mm or m) settings are selected.
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Select a street in modelling software to place street furniture in.  
+                                    <br>
+                                    If there is no street that you would like to reference to, create a new street. The new street can be created by
+                                    creating a ground plane in one layer and work in 2D space (line with dimension of 2.2m for one lane) to 3D space (plane).                                     
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Layer street with points and decide whether points are parallel or perpendicular to the street. 
+                                    <br>
+                                    For the spacing between points, it can be even (for bus stops it is 6m apart) or uneven (to be decided by the user). 
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Create 2D outline for street furniture.
+                                </p>
+                                <img src="../static/images/singru/busstop/busstop2.png" , width="75%">
+                                <br>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Move to 3D space.
+                                </p>
+                                <img src="../static/images/singru/busstop/busstop3.png" , width="75%">
+                                <br>
+                                <img src="../static/images/singru/busstop/busstop4.png" , width="75%">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    OPTIONAL: Repeat steps 5 to 7 for the complementary furnitures of the bus stop with generic dimensions as below.
+                                    <br>
+                                    <table>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>General Specifications(m):</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Notice Board</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Height: 1.8m</li>
+                                                    <li>Width: 1m</li>
+                                                    <li>Thickness: 0.15m</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address Plate</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Height: 0.15m</li>
+                                                    <li>Width: 1.5m</li>
+                                                    <li>Thickness: 0.05m</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bench (<a href="D_AssetLibraryBench.html">Bench Generation</a>)</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Height: 0.45m</li>
+                                                    <li>Width: 0.33m</li>
+                                                    <li>Length: 1.2m</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <br>
+                            <li>
+                                <p>
+                                    Group all objects.
+                                </p>
+                                <br>
+                            <li>
+                                <p>
+                                    Move desired objects to (0,0,0) point in CAD software.
+                                </p>
+                                <br>
+                            <li>
+                                <p>
+                                    Ensure saved views (named views for Rhinoceros) are deleted. Export objects into
+                                    compatible file format for the digital environment (.fbx for Unity).
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Open Unity software and drag in street furniture.
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Click on “hierarchy” tab, Right click on imported street furniture, select “Unpack
+                                    prefab”.
+                                </p>
+                                <img src="../static/images/singru/busstop/busstop5.png" , width="75%">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Select camera views (Front, Right, Top, Perspective) and delete, after this action,
+                                    the “object” should only have street furniture component.
+                                </p>
+                                <img src="../static/images/singru/busstop/busstop6.png" , width="75%">
+                                <br>
+                                <img src="../static/images/singru/busstop/busstop7.png" , width="75%">
+                            </li>
+                        </ol>
+
+                        <hr>
+
+                        <ul>
+                            <li><span class=" page-history">New Updates Here</span>
+                            </li>
+                        </ul>
+                        <div id="_content"></div>
+                        <div class="nextprev clear">
+                            <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                <div class="tip"> Unity Hub</div>
+                            </div>
+                            <div class="icon tt right" data-distance="-40|-30|top">
+                                <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                <div class="tip"> Adding modules to the Unity Editor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-wrapper">
+                        <div class="footer clear">
+                            <div class="copy"></div>
+                            <div class="menu">
+                                <a href="https://learn.unity.com/">Unity Tutorials</a>
+                                <a href="FAQ.html">FAQ</a>
+                                <a href="Downloads.html">Download Links</a>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="../static/js/special.js"></script>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+
+
+    </div>
+</body>
+
+</html>
