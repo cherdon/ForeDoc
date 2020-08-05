@@ -1,6 +1,6 @@
 var toc = {
   "title": " Fore Documentation (1.0.1)",
-  "link": "ForeDocumentation",
+  "link": "Documentation",
   "children": [
     {
         "title": " System Requirements",
@@ -57,28 +57,17 @@ var toc = {
     },
     {
       "title": " Preparing the environment",
-      "link": "SettingUpVehicleSimul",
+      "link": "D_PreparingEnvironmentIntro",
       "children": [
         {
           "title": " Importing of models",
-          "link": "SettingUpVehicleSimul",
+          "link": "D_PreparingEnvironmentImporting",
           "children": null
         },
         {
-          "title": " Basic Configurations",
-          "link": "SettingUpVehicleSimul",
-          "children": [
-            {
-              "title": " Probuilderize",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            },
-            {
-              "title": " Setting Global Parameters",
-              "link": "SettingUpVehicleSimul",
-              "children": null
-            }
-          ]
+          "title": " Probuilderize",
+          "link": "D_PreparingEnvironmentProbuilderizing",
+          "children": null
         }
       ]
     },
@@ -140,13 +129,85 @@ var toc = {
     },
     {
       "title": " Vehicle Simulation",
-      "link": "SettingUpVehicleSimul",
-      "children": null
+      "link": "D_VehicleSimulationIntro",
+      "children": [
+        {
+          "title": " Pre-requisites",
+          "link": "D_VehicleSimulationPreReq",
+          "children": null
+        },
+        {
+          "title": " Spawn Point",
+          "link": "D_VehicleSimulationSpawn",
+          "children": null
+        },
+        {
+          "title": " State Machine Animator",
+          "link": "D_VehicleSimulationAnimator",
+          "children": null
+        },
+        {
+          "title": " Straight Lines",
+          "link": "D_VehicleSimulationStraight",
+          "children": null
+        },
+        {
+          "title": " Turning Around Bends",
+          "link": "D_VehicleSimulationBends",
+          "children": null
+        },
+        {
+          "title": " Carpark Simulation",
+          "link": "D_VehicleSimulationCarpark",
+          "children": null
+        },
+        {
+          "title": " Despawn Point",
+          "link": "D_VehicleSimulationDespawn",
+          "children": null
+        }
+      ]
     },
     {
       "title": " Pedestrian Simulation",
       "link": "SettingUpVehicleSimul",
-      "children": null
+      "children": [
+        {
+          "title": " Pre-requisites",
+          "link": "D_PedestrianSimulationPreReq",
+          "children": null
+        },
+        {
+          "title": " Basic Information",
+          "link": "D_PedestrianSimulationBasicInfo",
+          "children": null
+        },
+        {
+          "title": " Classifying Objects",
+          "link": "D_PedestrianSimulationClassifyObjects",
+          "children": null
+        },
+        {
+          "title": " Building Waypoint System",
+          "link": "D_PedestrianSimulationWaypoints",
+          "children": null
+        },
+        {
+          "title": " Setting Up Agents",
+          "link": "D_PedestrianSimulationSetupAgent",
+          "children": null
+        },
+        {
+          "title": " Configuring Agent Behaviours",
+          "link": "D_PedestrianSimulationAgentBehaviours",
+          "children": null
+        },
+        {
+          "title": " Scaling up the Simulation",
+          "link": "D_PedestrianSimulationScalingUp",
+          "children": null
+        }
+      ]
     },
     {
       "title": " Glossary",
