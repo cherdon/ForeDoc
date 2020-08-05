@@ -1,6 +1,6 @@
 var toc = {
   "title": " Fore Documentation (1.0.1)",
-  "link": "ForeDocumentation",
+  "link": "Documentation",
   "children": [
     {
         "title": " System Requirements",
@@ -140,8 +140,44 @@ var toc = {
     },
     {
       "title": " Vehicle Simulation",
-      "link": "SettingUpVehicleSimul",
-      "children": null
+      "link": "D_PedestrianSimulationIntro",
+      "children": [
+        {
+          "title": " Pre-requisites",
+          "link": "D_PedestrianSimulationPreReq",
+          "children": null
+        },
+        {
+          "title": " Basic Information",
+          "link": "D_PedestrianSimulationBasicInfo",
+          "children": null
+        },
+        {
+          "title": " Classifying Objects",
+          "link": "D_PedestrianSimulationClassifyObjects",
+          "children": null
+        },
+        {
+          "title": " Building Waypoint System",
+          "link": "D_PedestrianSimulationWaypoints",
+          "children": null
+        },
+        {
+          "title": " Setting Up Agents",
+          "link": "D_PedestrianSimulationSetupAgent",
+          "children": null
+        },
+        {
+          "title": " Configuring Agent Behaviours",
+          "link": "D_PedestrianSimulationAgentBehaviours",
+          "children": null
+        },
+        {
+          "title": " Scaling up the Simulation",
+          "link": "D_PedestrianSimulationScalingUp",
+          "children": null
+        }
+      ]
     },
     {
       "title": " Pedestrian Simulation",
