@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <script>
+        var offline = (location.href.indexOf('docs.unity3d.com') == -1) ? true : false; if (!offline) { (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5V25JL6'); }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuring Agent Behaviours | Fore</title>
+    <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+    <meta name="author" content="Cher Don">
+    <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../static/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../static/images/favicons/apple-icon.png">
+    <meta name="msapplication-TileColor" content="#222c37">
+    <meta name="msapplication-TileImage" content="../static/images/favicons/ms-icon-144x144.png">
+    <script type="text/javascript" src="https://docs.unity3d.com/StaticFilesConfig/UnityVersionsInfo.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../static/js/core.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../docdata/toc.js?ts=1591328552"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/core.css?ts=1591328552">
+    <link rel="stylesheet" href="../static/css/prism.css">
+    <script src="../static/js/prism.js"></script>
+    <script src="../static/js/jquery.sidebar.min.js"></script>
+    <link rel="stylesheet" href="../static/css/mobileoptimisation.css">
+    <script src="../static/js/mobileoptimisation.js"></script>
+</head>
+
+<body>
+    <div class="header-wrapper">
+        <div id="header" class="header">
+            <div class="content">
+                <div class="spacer">
+                    <div class="menu">
+                        <div id="nav-open" for="nav-input"><span></span></div>
+                        <div class="logo"><a href="Documentation.html"></a></div>
+                        <div class="search-form">
+                            <form action="30_search.html" method="get" class="apisearch">
+                                <input type="text" name="q" placeholder="Search documentation..."
+                                    autosave="Unity Reference" results="5" class="sbox field" id="q"><input
+                                    type="submit" class="submit">
+                            </form>
+                        </div>
+                        <ul>
+                            <li><a href="Documentation.html" class="selected">Documentation</a></li>
+                            <li><a href="Modules.html">Modules</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="more">
+                    <div class="filler"></div>
+                    <ul>
+                        <li><a href="../index.html">Go to website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="content">
+                <div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                    Version: <b>1.0.1</b>
+                    <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+                        <ul id="OtherVersionsContentUl"></ul>
+                        <div id="otherVersionsLegend">
+                            <ul>
+                                <li>
+                                    <div id="supportedColour" class="legendBox"></div>
+                                    Supported
+                                </li>
+                                <li>
+                                    <div id="notFoundColour" class="legendBox"></div>
+                                    Legacy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+                </div>
+                <div class="lang-switcher">
+                    <div class="current toggle" data-target=".lang-list">
+                        <div class="lbl">Language
+                            : <span class="b">English</span>
+                        </div>
+                        <div class="arrow"></div>
+                        <div class="lang-list" style="display:none;">
+                            <ul>
+                                <li><a href="Documentation.html">English</a></li>
+                                <li><a href="Documentation.html">中文</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobileLogo"><a href="Documentation.html"></a></div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-wrap">
+                <div class="content">
+                    <div class="sidebar-menu">
+                        <div class="toc" id="customScrollbar">
+                            <h2>Fore Documentation</h2>
+                            <div class="search-form sidebar-search-form">
+                                <form action="30_search.html" method="get" class="apisearch">
+                                    <input type="text" name="q" placeholder="Search documentation..."
+                                        autosave="Unity Reference" results="5" class="sbox field" id="q"><input
+                                        type="submit" id="mobileSearchBtn" class="submit" value="Search">
+                                </form>
+                            </div>
+                            <div class="toggle version-number sidebar-version-switcher" id="VersionNumber"
+                                data-target=".otherversionscontent">
+                                <form id="otherVersionsContentMobileForm">
+                                    <div class="ui-field-contain">
+                                        <label for="select-native-4">Version: 1.0.1</label><select
+                                            name="select-native-4" id="versionsSelectMobile">
+                                            <option>Select a different version</option>
+                                            <optgroup id="versionsWithThisPageMobile" label="Versions with this page">
+                                            </optgroup>
+                                            <optgroup id="versionsWithoutThisPageMobile"
+                                                label="Versions without this page"></optgroup>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="lang-switcher">
+                                <div class="current toggle" data-target=".lang-list">
+                                    <div class="lbl">Language
+                                        : <span class="b">English</span>
+                                    </div>
+                                    <div class="arrow"></div>
+                                    <div class="lang-list" style="display:none;">
+                                        <ul>
+                                            <li><a href="Documentation.html">English</a></li>
+                                            <li><a href="Documentation.html">中文</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Content -->
+        <div id="content-wrap" class="content-wrap">
+            <div class="content-block">
+                <div class="content">
+                    <div class="section">
+                        <div class="breadcrumbs clear">
+                            <ul>
+                                <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
+                                <li><a href="D_PedestrianSimulationIntro.html"> Pedestrian Simulation</a></li>
+                                <li> Configuring Agent Behaviours</li>
+                            </ul>
+                        </div>
+                        <div class="mb20">
+                            <div class="nextprev clear">
+                                <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                    <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                    <div class="tip"> Unity Hub</div>
+                                </div>
+                                <div class="icon tt right" data-distance="-40|-30|top">
+                                    <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                    <div class="tip"> Adding modules to the Unity Editor</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="_leavefeedback"></div>
+                        <h1>Configuring Agents Behaviours using Polarith AI</h1>
+                        <!--BeginSwitchLink-->
+                        <!--EndSwitchLink-->
+                        <div class="clear"></div>
+                        <p>
+                            Polarith AI components allows the agent to follow waypoints, avoid obstacles and other
+                            pedestrians which are fundamental to a realistic pedestrian simulation.
+                            <br>
+                            For the purpose of our simulation, we have purchased
+                            <a
+                                href="https://assetstore.unity.com/packages/3d/characters/humanoids/advanced-people-pack-2-170756#content">AdvancedPeoplePack2
+                            </a>
+                            where the following settings have already been saved in the prefabs.
+                        </p>
+                        <p>However, in the case where a different assest is used:</p>
+                        <br>
+                        <ol>
+                            <li>
+                                <p>
+                                    Under the Agent, create an empty GameObject and label it as "AI".
+                                </p>
+                                <img src="../static/images/chinhong/ai_object.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Under the AI object, attach the <strong>AIM Context</strong> component.
+                                    <br>
+                                    Instantiate the values as shown as below:
+                                </p>
+                                <img src="../static/images/chinhong/aim_context_main.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Attach the <strong>AIM Steering Filter</strong> component.
+                                    <br>
+                                    Select the Perceiver that you created in <strong>step 5</strong> of
+                                    <a href="D_PedestrianSimulationClassifyObjects.html">Classifying Objects</a>,
+                                    under the Steering Perceiver tab.
+                                </p>
+                                <img src="../static/images/chinhong/steering_filter.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Attach the <strong>AIM Follow Waypoints</strong> component.
+                                    <br>
+                                    This component allows your agent to follow the waypoint systems that you created in
+                                    <a href="D_PedestrianSimulationWaypoints.html">Building Waypoints</a>.
+                                    <br>
+                                    We will go more in depth under
+                                    <a href="D_PedestrianSimulationScalingUp.html">Scaling Up the Simulation</a>.
+                                </p>
+                                <img src="../static/images/chinhong/aimfollowwp_reactive.png ">
+                                <br>
+                                <img src="../static/images/chinhong/aimfollowwp_enviroment.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Attach the <strong>AIM Seek</strong> component.
+                                    <br>
+                                    This component notifies your agent to avoid the <strong>obstacles</strong> that you
+                                    have classified in
+                                    <a href="D_PedestrianSimulationClassifyObjects.html">Classifying Objects</a>.
+                                    <br>
+                                    Modify the parameters for the Reactive and Environment Properties as follow:
+                                </p>
+                                <img src="../static/images/chinhong/aimseek_reactive.png">
+                                <br>
+                                <img src="../static/images/chinhong/aimseek_environment.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Attach the <strong>AIM Avoid</strong> component.
+                                    <br>
+                                    This component notifies your agent to avoid other <strong>pedestrians</strong> that
+                                    you have classified in
+                                    <a href="D_PedestrianSimulationClassifyObjects.html">Classifying Objects</a>.
+                                    <br>
+                                    Modify the parameters for the Reactive and Environment Properties as follow:
+                                </p>
+                                <img src="../static/images/chinhong/aimavoid_reactive.png">
+                                <br>
+                                <img src="../static/images/chinhong/aimavoid_environment.png">
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Attach the <strong>AIM Stabilization</strong> component where the default parameters should be sufficient.
+                                    <br>
+                                    Stabilization ensures that an agent holds its current movement direction, and thus,
+                                    appears to have a much smoother overall movement.
+                                </p>
+                                <img src="../static/images/chinhong/aimstabilization.png">
+                            </li>
+                        </ol>
+
+                        <hr>
+
+                        <ul>
+                            <li><span class="page-history">New Updates Here</span></li>
+                        </ul>
+                        <div id="_content"></div>
+                        <div class="nextprev clear">
+                            <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                <div class="tip"> Unity Hub</div>
+                            </div>
+                            <div class="icon tt right" data-distance="-40|-30|top">
+                                <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                <div class="tip"> Adding modules to the Unity Editor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-wrapper">
+                        <div class="footer clear">
+                            <div class="copy"></div>
+                            <div class="menu">
+                                <a href="https://learn.unity.com/">Unity Tutorials</a>
+                                <a href="FAQ.html">FAQ</a>
+                                <a href="Downloads.html">Download Links</a>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="../static/js/special.js"></script>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+
+
+    </div>
+</body>
+
+</html>
