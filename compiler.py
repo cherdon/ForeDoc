@@ -72,7 +72,7 @@ if __name__ == "__main__":
     index_json['searchIndex'] = dict()
     for i in range(len(titles)):
         if i == 0:
-            pass
+            index_json['pages'].append([links[i], titles[i].strip(" ")])
         else:
             print("Parsing through {}/{} links".format(str(i), str(len(titles))))
             index_json['pages'].append([links[i], titles[i].strip(" ")])
@@ -88,8 +88,8 @@ if __name__ == "__main__":
                 sentence = parse_word(t)
                 if sentence != "":
                     index_json['info'].append([sentence, i])
-
-                words = [parse_word(word) for word in t.split(" ") if word != ""]
+            for i in range(len(index_json['info'])):
+                words = [parse_word(word) for word in index_json['info'][i][0].split(" ") if word != ""]
                 for word in words:
                     if word not in index_json['common'].keys():
                         if word in index_json['searchIndex']:
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # Unique search index
     index_json['searchIndex'] = {key: list(set(value)) for key, value in index_json['searchIndex'].items()}
 
-    print(index_json['info'])
+    print(len(index_json['info']))
     print(len(index_json['searchIndex']))
 
     # Storing final file

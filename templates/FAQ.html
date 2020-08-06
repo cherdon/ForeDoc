@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State Machine Animator | Fore</title>
+    <title>FAQ | Fore</title>
     <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
     <meta name="author" content="Cher Don">
     <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
@@ -162,8 +162,7 @@
                     <div class="breadcrumbs clear">
                         <ul>
                             <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
-                            <li><a href="D_VehicleSimulationIntro.html"> Vehicle Simulation</a></li>
-                            <li> State Machine Animator</li>
+                            <li> Frequently Asked Questions</li>
                         </ul>
                     </div>
                     <div class="mb20">
@@ -179,25 +178,62 @@
                         </div>
                     </div>
                     <div id="_leavefeedback"></div>
-                    <h1>State Machine Animator</h1>
+                    <h1>Frequently Asked Questions</h1>
                     <!--BeginSwitchLink--><!--EndSwitchLink-->
                     <div class="clear"></div>
 
                     <ol>
                         <li>
-                            <p>First, you have to set up your unique state machine for your simulation. This state machine will determine your vehicle’s flow as they enter the simulation, which possible states and when to exit.</p>
+                            <p><strong>Substance.Engine.bundle</strong> cannot be opened because the developer cannot be verified</p>
+                            <img src="../static/images/faq/sub-engine.png" width="50%">
+                            <p>This is due to new security rules in MacOS</p>
+                            <ol>
+                                <li>
+                                    <p>To solve this, go to “Security & Privacy”</p>
+                                    <img src="../static/images/faq/sec-priv.png" width="80%">
+                                </li>
+                                <li>
+                                    <p>On the bottom, you should be able to bypass this by clicking “Allow Anyway”. Leave this window open, as you should need this multiple times throughout the build process for the first time.</p>
+                                    <img src="../static/images/faq/window-open.png" width="50%">
+                                </li>
+                                <li>
+                                    <p>If you are not able to, leave the “Security & Privacy” window open, and click on the “Cancel” button on the dialog. This should allow the “Allow Anyway” button to appear.</p>
+                                    <img src="../static/images/faq/sub-engine.png" width="50%">
+                                </li>
+                                <li>
+                                    <p>The dialog will appear again. This time, there is an option to “Open”. Click that.</p>
+                                    <img src="../static/images/faq/open.png" width="50%">
+                                </li>
+                                <li>
+                                    <p>Repeat steps for all other files that can’t be opened. Common files that can’t be opened are:</p>
+                                    <ol>
+                                        <li>Substance.Engine.bundle</li>
+                                        <li>libsubstance_sse2_blend.bundle</li>
+                                    </ol>
+                                </li>
+                            </ol>
                         </li>
                         <li>
-                            <p>You can duplicate the <strong>Parking</strong> Animator Controller from Assets > Vehicle Simulation > Animation for reference. Remember to label each state with a unique number to use later on for the Polarith AI module.</p>
-                            <img src="../static/images/cherdon/state-machine.png" width="80%">
+                            <p>A material is using the texture as a normal map. The texture must be marked as a normal map in the import settings</p>
+                            <img src="../static/images/faq/normalmap.png" width="50%">
+                            <ol>
+                                <li>Simply click ignore</li>
+                            </ol>
                         </li>
                         <li>
-                            <p>Select each transition and make sure the conditions are set correctly. That is <strong>Change Equals &lt;Value of Next Unique State Number&gt;</strong></p>
-                            <img src="../static/images/cherdon/state-transition.png" width="80%">
-                        </li>
-                        <li>
-                            <p>Finally, go to <strong>AIController</strong> which is located at Assets > Vehicle Simulation > CarparkDriving, to change the Animator Controller to the new State Model you just created.</p>
-                            <img src="../static/images/cherdon/controller-statemachine.png" width="40%">
+                            <p>Deterministic compilation failed. You can disable Deterministic builds in Player Settings</p>
+                            <img src="../static/images/faq/compilefail.png" width="50%">
+                            <p>This happens when you are using Unity Release 2020.1.0f1 and above.</p>
+                            <ol>
+                                <li>
+                                    <p>Go to “Window > Package Manager”</p>
+                                    <img src="../static/images/faq/packageman.png" width="50%">
+                                </li>
+                                <li>
+                                    <p>Search for Multiplayer HLAPI and click on “Update”</p>
+                                    <img src="../static/images/faq/multiplayer.png" width="50%">
+                                </li>
+                            </ol>
                         </li>
                     </ol>
 
