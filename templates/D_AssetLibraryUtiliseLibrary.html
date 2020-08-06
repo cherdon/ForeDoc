@@ -177,80 +177,62 @@
                             </div>
                         </div>
                         <div id="_leavefeedback"></div>
-                        <h1>Utilising Standard Asset Library</h1>
+                        <h1>Utilising the Standard Asset Library in Unity</h1>
                         <!--BeginSwitchLink-->
                         <!--EndSwitchLink-->
                         <div class="clear"></div>
                         <p>
-                            In order for the agents to effectively interact with the environment, basic parameters like
-                            physics interactions has to be set first.
-                            <br>
-                            For the purpose of our simulation, we have purchased
-                            <a
-                                href="https://assetstore.unity.com/packages/3d/characters/humanoids/advanced-people-pack-2-170756#content">AdvancedPeoplePack2
-                            </a>
-                            where the following settings have already been saved in the prefabs.
+                            After creating the standard asset library, we can need to import it into Unity to utilise
+                            them in our simulations.
                         </p>
-                        <p>However, in the case where a different assest is used:</p>
                         <br>
                         <ol>
                             <li>
-                                <p>Click and drag in a prefab of your agent into the scene.</p>
-                            </li>
-                            <br>
-                            <li>
-                                <p>Attach a <strong>Rigidbody</strong> component to the agent and ensure than "Use
-                                    Gravity" is checked.</p>
-                                <img src="../static/images/chinhong/rigidbody.png">
-                            </li>
-                            <br>
-                            <li>
-                                <p>Attach a <strong>Box Collider</strong> component to the agent and edit the bounding
-                                    volume such that the it matches the agent in such a manner:</p>
-                                <img src="../static/images/chinhong/box_collider.png">
+                                <p>
+                                    Drag in the street furniture into the Unity scene.
+                                    <br>
+                                    Click on street furniture and uncheck box under the Inspector Tab → Model → “Import
+                                    cameras”.
+                                    <br>
+                                    Click “Apply”.
+                                </p>
+                                <img src="../static/images/singru/utilise1.png" , width="75%">
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Attach a <strong>Root Motion Controller</strong> component to the agent.
-                                    <br>
-                                    Note: the Context object to be attached to this component will be instantiated in
-                                    <strong>step 2</strong>of
-                                    <a href="D_PedestrianSimulationAgentBehaviours.html"">Configuring Agent Behaviours</a>.
-                            </p>
-                            <img src=" ../static/images/chinhong/root_motion_controller.png">
+                                    Click on the “hierarchy” tab, right click on the imported street furniture, and
+                                    select “Unpack prefab”.
+                                </p>
+                                <img src="../static/images/singru/utilise2.png" , width="75%">
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Attach a <strong>AIM Simple Controller</strong> component to the agent where the
-                                    default values should be sufficient.
-                                    <br>
-                                    Note: the Context object to be attached to this component will be instantiated in
-                                    <strong>step 2</strong> of
-                                    <a href="D_PedestrianSimulationAgentBehaviours.html"">Configuring Agent Behaviours</a>.
-                            </p>
-                            <img src=" ../static/images/chinhong/simple_controller.png ">
-                        </li>
-                    </ol>
-
-                    <hr>
-
-                    <ul>
-                        <li><span class=" page-history">New Updates Here</span>
+                                    Select camera views (Front, Right, Top, Perspective) and delete. After this action,
+                                    the “object” should only have street furniture component.
+                                </p>
+                                <img src="../static/images/singru/utilise3.png" , width="75%">
                             </li>
-                            </ul>
-                            <div id="_content"></div>
-                            <div class="nextprev clear">
-                                <div class="icon tt left mr1" data-distance="-40|-30|top">
-                                    <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
-                                    <div class="tip"> Unity Hub</div>
-                                </div>
-                                <div class="icon tt right" data-distance="-40|-30|top">
-                                    <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
-                                    <div class="tip"> Adding modules to the Unity Editor</div>
-                                </div>
+                        </ol>
+
+                        <hr>
+
+                        <ul>
+                            <li><span class=" page-history">New Updates Here</span>
+                            </li>
+                        </ul>
+                        <div id="_content"></div>
+                        <div class="nextprev clear">
+                            <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                <div class="tip"> Unity Hub</div>
                             </div>
+                            <div class="icon tt right" data-distance="-40|-30|top">
+                                <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                <div class="tip"> Adding modules to the Unity Editor</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="footer-wrapper">
                         <div class="footer clear">
