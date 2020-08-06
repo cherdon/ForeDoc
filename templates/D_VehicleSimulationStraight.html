@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <script>
+        var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straight Lines | Fore</title>
+    <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+    <meta name="author" content="Cher Don">
+    <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="../static/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="../static/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="../static/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="../static/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="../static/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../static/images/favicons/apple-icon.png">
+    <meta name="msapplication-TileColor" content="#222c37">
+    <meta name="msapplication-TileImage" content="../static/images/favicons/ms-icon-144x144.png">
+    <script type="text/javascript" src="https://docs.unity3d.com/StaticFilesConfig/UnityVersionsInfo.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../static/js/core.js?ts=1591328552"></script>
+    <script type="text/javascript" src="../docdata/toc.js?ts=1591328552"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/core.css?ts=1591328552">
+    <link rel="stylesheet" href="../static/css/prism.css">
+    <script src="../static/js/prism.js"></script>
+    <script src="../static/js/jquery.sidebar.min.js"></script>
+    <link rel="stylesheet" href="../static/css/mobileoptimisation.css">
+    <script src="../static/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div class="header-wrapper">
+    <div id="header" class="header">
+        <div class="content">
+            <div class="spacer">
+                <div class="menu">
+                    <div id="nav-open" for="nav-input"><span></span></div>
+                    <div class="logo"><a href="Documentation.html"></a></div>
+                    <div class="search-form">
+                        <form action="30_search.html" method="get" class="apisearch">
+                            <input type="text" name="q" placeholder="Search documentation..." autosave="Unity Reference"
+                                   results="5" class="sbox field" id="q"><input type="submit" class="submit">
+                        </form>
+                    </div>
+                    <ul>
+                        <li><a href="Documentation.html" class="selected">Documentation</a></li>
+                        <li><a href="Modules.html">Modules</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="more">
+                <div class="filler"></div>
+                <ul>
+                    <li><a href="../index.html">Go to website</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="toolbar">
+        <div class="content">
+            <div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                Version: <b>1.0.1</b>
+                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+                    <ul id="OtherVersionsContentUl"></ul>
+                    <div id="otherVersionsLegend">
+                        <ul>
+                            <li>
+                                <div id="supportedColour" class="legendBox"></div>
+                                Supported
+                            </li>
+                            <li>
+                                <div id="notFoundColour" class="legendBox"></div>
+                                Legacy
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+            </div>
+            <div class="lang-switcher">
+                <div class="current toggle" data-target=".lang-list">
+                    <div class="lbl">Language
+                        : <span class="b">English</span>
+                    </div>
+                    <div class="arrow"></div>
+                    <div class="lang-list" style="display:none;">
+                        <ul>
+                            <li><a href="Documentation.html">English</a></li>
+                            <li><a href="Documentation.html">中文</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobileLogo"><a href="Documentation.html"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-wrap">
+            <div class="content">
+                <div class="sidebar-menu">
+                    <div class="toc" id="customScrollbar">
+                        <h2>Fore Documentation</h2>
+                        <div class="search-form sidebar-search-form">
+                            <form action="30_search.html" method="get" class="apisearch">
+                                <input type="text" name="q" placeholder="Search documentation..." autosave="Unity Reference"
+                                       results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn"
+                                                                                    class="submit" value="Search">
+                            </form>
+                        </div>
+                        <div class="toggle version-number sidebar-version-switcher" id="VersionNumber"
+                             data-target=".otherversionscontent">
+                            <form id="otherVersionsContentMobileForm">
+                                <div class="ui-field-contain">
+                                    <label for="select-native-4">Version: 1.0.1</label><select name="select-native-4"
+                                                                                                id="versionsSelectMobile">
+                                    <option>Select a different version</option>
+                                    <optgroup id="versionsWithThisPageMobile"
+                                              label="Versions with this page"></optgroup>
+                                    <optgroup id="versionsWithoutThisPageMobile"
+                                              label="Versions without this page"></optgroup>
+                                </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="lang-switcher">
+                            <div class="current toggle" data-target=".lang-list">
+                                <div class="lbl">Language
+                                    : <span class="b">English</span>
+                                </div>
+                                <div class="arrow"></div>
+                                <div class="lang-list" style="display:none;">
+                                    <ul>
+                                        <li><a href="Documentation.html">English</a></li>
+                                        <li><a href="Documentation.html">中文</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Content -->
+    <div id="content-wrap" class="content-wrap">
+        <div class="content-block">
+            <div class="content">
+                <div class="section">
+                    <div class="breadcrumbs clear">
+                        <ul>
+                            <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
+                            <li><a href="D_VehicleSimulationIntro.html"> Vehicle Simulation</a></li>
+                            <li> Straight Lines</li>
+                        </ul>
+                    </div>
+                    <div class="mb20">
+                        <div class="nextprev clear">
+                            <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                <div class="tip"> Unity Hub</div>
+                            </div>
+                            <div class="icon tt right" data-distance="-40|-30|top">
+                                <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                <div class="tip"> Adding modules to the Unity Editor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="_leavefeedback"></div>
+                    <h1>Straight Lines</h1>
+                    <!--BeginSwitchLink--><!--EndSwitchLink-->
+                    <div class="clear"></div>
+
+                    <ol>
+                        <li>
+                            <p>We first begin with a simple movement, just to move forward.</p>
+                        </li>
+                        <li>
+                            <p>Right click on the Hierarchy, and select <strong>Create Empty</strong></p>
+                            <img src="../static/images/cherdon/straight-create.png" width="50%">
+                        </li>
+                        <li>
+                            <p>Drag the GameObject to the end of the straight road in which the Spawn Point is located on, and name it something like <strong>StraightRoad1</strong></p>
+                            <img src="../static/images/cherdon/straight-rename.png" width="80%">
+                        </li>
+                        <li>
+                            <p>Go to the <strong>AIController</strong> Prefab located in Assets > Vehicle Simulation > CarparkDriving. This AIController will be used for the vehicle spawned</p>
+                        </li>
+                        <li>
+                            <p>In the Inspector window, click <strong>Add Component</strong>, and add <strong>AIMFollow</strong></p>
+                            <img src="../static/images/cherdon/straight-aimfollow.png" width="50%">
+                        </li>
+                        <li>
+                            <p>Now, give that AIMFollow component a Label name (for example, SpawnToDrive).</p>
+                            <img src="../static/images/cherdon/straight-rename-follow.png" width="50%">
+                        </li>
+                        <li>
+                            <p>Click on the <strong>SpawnPoint</strong> GameObject we created earlier and plus one to the size of the <strong>AIM Decision Points</strong>.</p>
+                            <img src="../static/images/cherdon/straight-pooling-1.png" width="50%">
+                        </li>
+                        <li>
+                            <p>
+                                Fill in the following accordingly:
+                                <ul>
+                                    <li>Name or Label: Label of AIMFollow we gave earlier on (SpawnToDrive)</li>
+                                    <li>AIM Object: Type of AIM (AIMFollow, AIMOrbit, etc.)</li>
+                                    <li>Decision Point: GameObject we created at Step 3</li>
+                                </ul>
+                            </p>
+                            <img src="../static/images/cherdon/straight-pooling.png" width="50%">
+                        </li>
+                        <li>
+                            <p>Finally, go to the State Machine Animator and add in SpawnToDrive as an allowed behaviour at the beginning.</p>
+                            <img src="../static/images/cherdon/straight-state.png" width="80%">
+                        </li>
+                    </ol>
+
+                    <hr>
+
+                    <ul>
+                        <li><span class="page-history">New Updates Here</span></li>
+                    </ul>
+
+                    <div id="_content"></div>
+                    <div class="nextprev clear">
+                        <div class="icon tt left mr1" data-distance="-40|-30|top">
+                            <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                            <div class="tip"> Unity Hub</div>
+                        </div>
+                        <div class="icon tt right" data-distance="-40|-30|top">
+                            <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                            <div class="tip"> Adding modules to the Unity Editor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <div class="footer clear">
+                        <div class="copy"></div>
+                        <div class="menu">
+                            <a href="Tutorials.html">Tutorials</a>
+                            <a href="FAQ.html">FAQ</a>
+                            <a href="Downloads.html">Download Links</a>
+                        </div>
+                    </div>
+                </div>
+                <script src="../static/js/special.js"></script>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+
+
+</div>
+</body>
+</html>
