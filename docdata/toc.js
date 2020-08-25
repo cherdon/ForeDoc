@@ -128,6 +128,11 @@ var toc = {
           "title": " Street Lighting",
           "link": "D_AssetLibraryStreetLighting",
           "children": null
+        },
+        {
+          "title": " Other Assets",
+          "link": "D_AssetLibraryUtiliseLibrary",
+          "children": null
         }
       ]
     },
