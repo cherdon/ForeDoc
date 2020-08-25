@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street Sign Generation | Fore</title>
+    <title>Street Sign | Fore</title>
     <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
     <meta name="author" content="Cher Don">
     <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
@@ -161,7 +161,7 @@
                             <ul>
                                 <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
                                 <li><a href="D_AssetLibraryIntro.html"> Building Standard Assets</a></li>
-                                <li> Street Sign Generation</li>
+                                <li> Street Sign </li>
                             </ul>
                         </div>
                         <div class="mb20">
@@ -182,75 +182,149 @@
                         <!--EndSwitchLink-->
                         <div class="clear"></div>
                         <p>
-                            In order for the agents to effectively interact with the environment, basic parameters like
-                            physics interactions has to be set first.
-                            <br>
-                            For the purpose of our simulation, we have purchased
-                            <a
-                                href="https://assetstore.unity.com/packages/3d/characters/humanoids/advanced-people-pack-2-170756#content">AdvancedPeoplePack2
-                            </a>
-                            where the following settings have already been saved in the prefabs.
+                            <img src="../static/images/singru/streetsign/streetsign1.png">
                         </p>
-                        <p>However, in the case where a different assest is used:</p>
                         <br>
                         <ol>
                             <li>
-                                <p>Click and drag in a prefab of your agent into the scene.</p>
+                                <p>Getting the dimensions of street signs.</p>
+                                <br>
+                                <table>
+                                    <tr>
+                                        <td><strong>Specific Type</strong></td>
+                                        <td><strong>General Specifications(m):</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Generic Street Sign</td>
+                                        <td>
+                                            Board (length x height x thickness):
+                                            <ul>
+                                                <li>Type 1: 1.3m x 1.5m x 0.005m</li>
+                                                <li>Type 2: 0.2m x 2.2m x 0.005m</li>
+                                            </ul>
+                                            Pole:
+                                            <ul>
+                                                <li>Radius: 0.02m</li>
+                                                <li>Height: 2.5m</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Single Street Sign</td>
+                                        <td>
+                                            Board (length x height x thickness):
+                                            <ul>
+                                                <li>Type 1: 0.6m x 0.3m x 0.005m</li>
+                                                <li>Type 2: 0.9m x 0.35m x 0.005m</li>
+                                            </ul>
+                                            Pole:
+                                            <ul>
+                                                <li>Radius: 0.02m</li>
+                                                <li>Height: 2.5m</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                                Information gotten from <a
+                                    href="https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/architectural_standards/pdf/ADC%20Section%204_Commuter%20Facilities%20Design%20Requirements%20and%20Checklist%20Forms.pdf">LTA</a>
                             </li>
                             <br>
                             <li>
-                                <p>Attach a <strong>Rigidbody</strong> component to the agent and ensure than "Use
-                                    Gravity" is checked.</p>
-                                <img src="../static/images/chinhong/rigidbody.png">
-                            </li>
-                            <br>
-                            <li>
-                                <p>Attach a <strong>Box Collider</strong> component to the agent and edit the bounding
-                                    volume such that the it matches the agent in such a manner:</p>
-                                <img src="../static/images/chinhong/box_collider.png">
+                                <p> Open modelling software.
+                                    Ensure that the correct dimension (mm or m) settings are selected.
+                                </p>
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Attach a <strong>Root Motion Controller</strong> component to the agent.
+                                    Select a street in modelling software to place street furniture in.
                                     <br>
-                                    Note: the Context object to be attached to this component will be instantiated in
-                                    <strong>step 2</strong>of
-                                    <a href="D_PedestrianSimulationAgentBehaviours.html"">Configuring Agent Behaviours</a>.
-                            </p>
-                            <img src=" ../static/images/chinhong/root_motion_controller.png">
+                                    If there is no street that you would like to reference to, create a new street. The
+                                    new street can be created by
+                                    creating a ground plane in one layer and work in 2D space (line with dimension of
+                                    2.2m for one lane) to 3D space (plane).
+                                </p>
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Attach a <strong>AIM Simple Controller</strong> component to the agent where the
-                                    default values should be sufficient.
+                                    Layer street with points and decide whether points are parallel or perpendicular to
+                                    the street.
                                     <br>
-                                    Note: the Context object to be attached to this component will be instantiated in
-                                    <strong>step 2</strong> of
-                                    <a href="D_PedestrianSimulationAgentBehaviours.html"">Configuring Agent Behaviours</a>.
-                            </p>
-                            <img src=" ../static/images/chinhong/simple_controller.png ">
-                        </li>
-                    </ol>
-
-                    <hr>
-
-                    <ul>
-                        <li><span class=" page-history">New Updates Here</span>
+                                    For the spacing between points, it can be even or
+                                    uneven (to be decided by the user).
+                                </p>
                             </li>
-                            </ul>
-                            <div id="_content"></div>
-                            <div class="nextprev clear">
-                                <div class="icon tt left mr1" data-distance="-40|-30|top">
-                                    <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
-                                    <div class="tip"> Unity Hub</div>
-                                </div>
-                                <div class="icon tt right" data-distance="-40|-30|top">
-                                    <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
-                                    <div class="tip"> Adding modules to the Unity Editor</div>
-                                </div>
+                            <br>
+                            <li>
+                                <p>
+                                    Create 2D outline for street furniture, be sure to include poles and align poles
+                                    with arrayed points.
+                                </p>
+                                <img src="../static/images/singru/streetsign/streetsign2.png" , width="75%">
+                                <br>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Work into 3D space by extruding the 2D shapes.
+                                </p>
+                                <img src="../static/images/singru/streetsign/streetsign3.png" , width="75%">
+                                <br>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Add realism to the 3D object by adding texture and color
+                                    (under the material section in Rhino CAD software, where changes reflected in
+                                    Rendered view).
+                                </p>
+                                <img src="../static/images/singru/streetsign/streetsign4.png" , width="75%">
+                                <p>
+                                    Then, orientate the furniture in the correct direction.
+                                    <br>
+                                    Lastly, group the furniture in an assigned layer and place the street sign according
+                                    to
+                                    points in step 2 if multiple street signs are required.
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    Group all objects.
+                                </p>
+                                <br>
+                            </li>
+                            <li>
+                                <p>
+                                    Move desired objects to (0,0,0) point in CAD software.
+                                </p>
+                                <br>
+                            <li>
+                                <p>
+                                    Ensure saved views (named views for Rhinoceros) are deleted. Export objects into
+                                    compatible file format for the digital environment (.fbx for Unity).
+                                </p>
+                            </li>
+                        </ol>
+
+                        <hr>
+
+                        <ul>
+                            <li><span class=" page-history">New Updates Here</span>
+                            </li>
+                        </ul>
+                        <div id="_content"></div>
+                        <div class="nextprev clear">
+                            <div class="icon tt left mr1" data-distance="-40|-30|top">
+                                <span class="prev"><a href="GettingStartedUnityHub.html"></a></span>
+                                <div class="tip"> Unity Hub</div>
                             </div>
+                            <div class="icon tt right" data-distance="-40|-30|top">
+                                <span class="next"><a href="GettingStartedAddingEditorComponents.html"></a></span>
+                                <div class="tip"> Adding modules to the Unity Editor</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="footer-wrapper">
                         <div class="footer clear">

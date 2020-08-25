@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Stop Generation | Fore</title>
+    <title>Bus Stop | Fore</title>
     <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
     <meta name="author" content="Cher Don">
     <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
@@ -161,7 +161,7 @@
                             <ul>
                                 <li><a href="Documentation.html"> Fore Documentation (1.0.1)</a></li>
                                 <li><a href="D_AssetLibraryIntro.html"> Building Standard Assets</a></li>
-                                <li> Bus Stop Generation</li>
+                                <li> Bus Stop</li>
                             </ul>
                         </div>
                         <div class="mb20">
@@ -191,8 +191,8 @@
                                 <br>
                                 <table>
                                     <tr>
-                                        <th>Specific Type</th>
-                                        <th>General Specifications(m):</th>
+                                        <td><strong>Specific Type</strong></td>
+                                        <td><strong>General Specifications(m):</strong></td>
                                     </tr>
                                     <tr>
                                         <td>Generic Bus Stop </td>
@@ -210,17 +210,14 @@
                                                 <li>Height: 2.2m</li>
                                                 <li>Radius: 0.1x2.2</li>
                                             </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Color</td>
-                                        <td>
+                                            Color:
                                             <ul>
                                                 <li>White</li>
                                                 <li>Grey</li>
                                             </ul>
                                         </td>
                                     </tr>
+                                    
                                     <tr>
                                         <td>Bus Stop that is Flushed with Kerb</td>
                                         <td>
@@ -256,24 +253,29 @@
                             <br>
                             <li>
                                 <p>
-                                    Select a street in modelling software to place street furniture in.  
+                                    Select a street in modelling software to place street furniture in.
                                     <br>
-                                    If there is no street that you would like to reference to, create a new street. The new street can be created by
-                                    creating a ground plane in one layer and work in 2D space (line with dimension of 2.2m for one lane) to 3D space (plane).                                     
+                                    If there is no street that you would like to reference to, create a new street. The
+                                    new street can be created by
+                                    creating a ground plane in one layer and work in 2D space (line with dimension of
+                                    2.2m for one lane) to 3D space (plane).
                                 </p>
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Layer street with points and decide whether points are parallel or perpendicular to the street. 
+                                    Layer street with points and decide whether points are parallel or perpendicular to
+                                    the street.
                                     <br>
-                                    For the spacing between points, it can be even (for bus stops it is 6m apart) or uneven (to be decided by the user). 
+                                    For the spacing between points, it can be even (for bus stops it is 6m apart) or
+                                    uneven (to be decided by the user).
                                 </p>
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    Create 2D outline for street furniture.
+                                    Create 2D outline for street furniture, be sure to include pillars and align pillars
+                                    with arrayed points.
                                 </p>
                                 <img src="../static/images/singru/busstop/busstop2.png" , width="75%">
                                 <br>
@@ -281,53 +283,84 @@
                             <br>
                             <li>
                                 <p>
-                                    Move to 3D space.
+                                    Work into 3D space by extruding the 2D shapes.
                                 </p>
                                 <img src="../static/images/singru/busstop/busstop3.png" , width="75%">
                                 <br>
-                                <img src="../static/images/singru/busstop/busstop4.png" , width="75%">
                             </li>
                             <br>
                             <li>
                                 <p>
-                                    OPTIONAL: Repeat steps 5 to 7 for the complementary furnitures of the bus stop with generic dimensions as below.
+                                    Add realism to the 3D object by adding texture and color
+                                    (under the material section in Rhino CAD software, where changes reflected in
+                                    Rendered view).
+                                </p>
+                                <img src="../static/images/singru/busstop/busstop4.png" , width="75%">
+                                <p>
+                                    Then, orientate the furniture in the correct direction.
                                     <br>
-                                    <table>
-                                        <tr>
-                                            <th>Type</th>
-                                            <th>General Specifications(m):</th>
-                                        </tr>
-                                        <tr>
-                                            <td>Notice Board</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Height: 1.8m</li>
-                                                    <li>Width: 1m</li>
-                                                    <li>Thickness: 0.15m</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Address Plate</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Height: 0.15m</li>
-                                                    <li>Width: 1.5m</li>
-                                                    <li>Thickness: 0.05m</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bench (<a href="D_AssetLibraryBench.html">Bench Generation</a>)</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Height: 0.45m</li>
-                                                    <li>Width: 0.33m</li>
-                                                    <li>Length: 1.2m</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                    Lastly, group the furniture in an assigned layer and place the bus stop according to
+                                    points in step 2 if multiple bus stops are required.
+                                </p>
+                            </li>
+                            <br>
+                            <li>
+                                <p>
+                                    OPTIONAL: Repeat steps 5 to 7 for the complementary furnitures of the bus stop with the
+                                    generic dimensions as below.
+                                    <br>
+                                    <br>
+                                <table >
+                                    <tr>
+                                        <td><strong>Specific Type</strong></td>
+                                        <td><strong>General Specifications(m):</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Notice Board</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: 1.8m</li>
+                                                <li>Width: 1m</li>
+                                                <li>Thickness: 0.15m</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address Plate</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: 0.15m</li>
+                                                <li>Width: 1.5m</li>
+                                                <li>Thickness: 0.05m</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bench (<a href="D_AssetLibraryBench.html">Bench Generation</a>)</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: 0.45m</li>
+                                                <li>Width: 0.33m</li>
+                                                <li>Length: 1.2m</li>
+                                                <li>Color: Grey / Brown</li>
+                                                <li>*Setback 1.5m from kerb</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bollard (<a href="D_AssetLibraryBollard.html">Bollard Generation</a>)</td>
+                                        <td>
+                                            <ul>
+                                                <li>Height: 0.9m</li>
+                                                <li>Overall Width: 0.1m</li>
+                                                <li>Distance Apart: 1.5m or 3m</li>
+                                                <li>Color: Grey / White</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                                Information gotten from <a
+                                    href="https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/architectural_standards/pdf/ADC%20Section%204_Commuter%20Facilities%20Design%20Requirements%20and%20Checklist%20Forms.pdf">LTA</a>
                                 </p>
                                 <br>
                             <li>
@@ -345,30 +378,6 @@
                                     Ensure saved views (named views for Rhinoceros) are deleted. Export objects into
                                     compatible file format for the digital environment (.fbx for Unity).
                                 </p>
-                            </li>
-                            <br>
-                            <li>
-                                <p>
-                                    Open Unity software and drag in street furniture.
-                                </p>
-                            </li>
-                            <br>
-                            <li>
-                                <p>
-                                    Click on “hierarchy” tab, Right click on imported street furniture, select “Unpack
-                                    prefab”.
-                                </p>
-                                <img src="../static/images/singru/busstop/busstop5.png" , width="75%">
-                            </li>
-                            <br>
-                            <li>
-                                <p>
-                                    Select camera views (Front, Right, Top, Perspective) and delete, after this action,
-                                    the “object” should only have street furniture component.
-                                </p>
-                                <img src="../static/images/singru/busstop/busstop6.png" , width="75%">
-                                <br>
-                                <img src="../static/images/singru/busstop/busstop7.png" , width="75%">
                             </li>
                         </ol>
 
