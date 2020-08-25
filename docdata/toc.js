@@ -100,8 +100,8 @@ var toc = {
           "children": null
         },
         {
-          "title": " Bridge",
-          "link": "D_AssetLibraryBridge",
+          "title": " Covered Walkway",
+          "link": "D_AssetLibraryCoveredWalkway",
           "children": null
         },
         {
